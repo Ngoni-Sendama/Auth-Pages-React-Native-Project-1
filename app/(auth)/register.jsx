@@ -1,99 +1,117 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native'
-import React from 'react'
-import { Link } from 'expo-router'
-import { FontAwesome } from "@expo/vector-icons";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { Link } from 'expo-router';
+import { FontAwesome } from '@expo/vector-icons';
 
 const Register = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Create Account</Text>
-      <Text style={styles.description}>Create an account so you can explore all the existing jobs</Text>
-      <TextInput style={styles.input} placeholder='Email' />
-      <TextInput style={styles.input} placeholder='Password' />
-      <TextInput style={styles.input} placeholder='Confirm Password' />
-      <Link href='/login' style={styles.signInBTN}>
-        <Text style={styles.signInTXT}>
-          Sign Up
-        </Text>
-      </Link>
-
-      <Link href='/login' style={{ marginVertical: 32 }}>
-        <Text style={styles.createText}>
-          Already have an account
-        </Text>
-      </Link>
-      <Text style={{ color: '#1F41BB', fontWeight: 'bold', fontSize: 18 }}>
-        or continue with
+      <Text style={styles.description}>
+        Create an account so you can explore all the existing jobs
       </Text>
 
+      <TextInput style={styles.input} placeholder='Email' placeholderTextColor="#666" />
+      <TextInput style={styles.input} placeholder='Password' placeholderTextColor="#666" secureTextEntry />
+      <TextInput style={styles.input} placeholder='Confirm Password' placeholderTextColor="#666" secureTextEntry />
+
+      <Link href='/login' style={styles.signInBTN}>
+        <Text style={styles.signInTXT}>Sign Up</Text>
+      </Link>
+
+      <Link href='/login' style={{ marginVertical: 24 }}>
+        <Text style={styles.createText}>Already have an account?</Text>
+      </Link>
+
+      <Text style={styles.orText}>or continue with</Text>
+
       <View style={styles.iconsView}>
-        <FontAwesome name="google" size={25} color="#010000" style={styles.icon} />;
-        <FontAwesome name="facebook" size={25} color="#010000" style={styles.icon} />;
-        <FontAwesome name="apple" size={25} color="#010000" style={styles.icon} />;
+        <TouchableOpacity style={styles.icon}>
+          <FontAwesome name="google" size={25} color="#DB4437" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.icon}>
+          <FontAwesome name="facebook" size={25} color="#4267B2" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.icon}>
+          <FontAwesome name="apple" size={25} color="#000" />
+        </TouchableOpacity>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    paddingVertical: 43,
-    paddingHorizontal: 10,
-    backgroundColor: '#ffff',
-
+    paddingVertical: 40,
+    paddingHorizontal: 20,
+    backgroundColor: '#F9FAFF',
   },
   input: {
-    height: 50,
-    width: '90%',
-    padding: 23,
-    borderRadius: 8,
+    height: 60,
+    width: '100%',
+    paddingHorizontal: 16,
+    borderRadius: 12,
     backgroundColor: '#F1F4FF',
-    marginVertical: 23,
+    marginVertical: 12,
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '500',
+    elevation: 2,
   },
   title: {
-    fontSize: 30,
+    fontSize: 32,
     fontWeight: 'bold',
     color: '#1F41BB',
   },
   description: {
     textAlign: 'center',
-    fontWeight: 'bold',
-    marginTop: 20,
-    width: '70%'
+    fontWeight: '500',
+    marginTop: 12,
+    marginBottom: 20,
+    fontSize: 16,
+    color: '#444',
+    width: '80%',
   },
   signInBTN: {
-    backgroundColor: '#1f41ba',
-    paddingVertical: 20,
-    paddingHorizontal: 50,
-    borderRadius: 8,
-    width: '90%',
+    backgroundColor: '#1F41BB',
+    paddingVertical: 16,
+    borderRadius: 12,
+    width: '100%',
+    marginTop: 12,
   },
   signInTXT: {
-    color: 'white',
+    color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   createText: {
     fontSize: 16,
+    fontWeight: '500',
+    color: '#555',
+    textAlign: 'center',
+  },
+  orText: {
+    color: '#1F41BB',
     fontWeight: 'bold',
-    color: '#494948'
+    fontSize: 16,
+    marginVertical: 20,
   },
   iconsView: {
     flexDirection: 'row',
-    gap: 14
+    gap: 16,
   },
   icon: {
-    marginTop: 13,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    backgroundColor: '#ececec61',
-    borderRadius: 8
-  }
-})
+    padding: 16,
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+});
