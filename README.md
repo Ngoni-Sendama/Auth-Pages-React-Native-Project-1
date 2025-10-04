@@ -1,6 +1,6 @@
 # Auth React Native Project UI Design
 
-Welcome Screen, Register and Login Screen in react native
+Welcome Screen, Register and Login Screen in react native and expo.
 
 ## Layouts
 ![Welcome Screen](<assets/final/Welcome Screen.png>)
