@@ -21,7 +21,7 @@ const Index = () => {
                     </Text>
                 </Link>
 
-                <Link href='/login' style={styles.registerBTN}>
+                <Link href='/register' style={styles.registerBTN}>
                     <Text style={styles.registerTXT}>
                         Register
                     </Text>

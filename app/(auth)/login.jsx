@@ -26,7 +26,7 @@ const Login = () => {
 
       <Link href='/login' style={styles.signInBTN}>
         <Text style={styles.signInTXT}>
-          SignIn
+          Sign In
         </Text>
       </Link>
 
